@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="container">
+      <div id="content">
+        <input type="button" id="i1" value="i1" onclick="errorClick()" />
+        <input type="button" id="i2" value="i2" onclick="promiseErrorClick()" />
+      </div>
+    </div>
+    <script>
+      function errorClick() {
+        window.someVal.error = "error";
+      }
+      function promiseErrorClick() {
+        new Promise(() => {
+          window.someVal.error = "error";
+        });
+      }
+    </script>
+  </body>
+</html>
