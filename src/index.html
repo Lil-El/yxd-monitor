@@ -57,6 +57,15 @@
         xhr.send("name=yxd");
       }
     </script>
+    <script>
+      let content = document.getElementsByClassName("content")[0];
+      setTimeout(() => {
+        let h1 = document.createElement("h1");
+        h1.innerHTML = "我是最有重要的内容";
+        h1.setAttribute("elementtiming", "meaningful"); // FMP会获取有elementtiming（固定的key）的元素，作为FMP；如果没有这个属性的元素，FMP为undefined
+        content.appendChild(h1);
+      }, 2000);
+    </script>
     <!-- <script src="/someError.js"></script> -->
   </body>
 </html>
