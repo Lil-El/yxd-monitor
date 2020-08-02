@@ -20,6 +20,7 @@ class SendTracker {
   send(data) {
     let extraData = getExtraData();
     let logs = { ...extraData, ...data };
+    console.log(logs);
     for (let key in logs) {
       // 阿里云：值不能是number
       if (typeof logs[key] === "number") {

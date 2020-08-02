@@ -25,8 +25,16 @@ function getSelectors(path) {
     .join(" ");
 }
 
-export default function (path) {
-  if (Array.isArray(path)) {
-    return getSelectors(path);
+export default function (pathsOrTarget) {
+  if (Array.isArray(pathsOrTarget)) {
+    return getSelectors(pathsOrTarget);
+  } else {
+    var paths = [];
+    var element = pathsOrTarget;
+    while (element) {
+      paths.push(element);
+      element = element.parentNode;
+    }
+    return getSelector(paths);
   }
 }
